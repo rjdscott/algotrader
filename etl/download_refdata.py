@@ -1,8 +1,3 @@
-import pandas as pd
-import requests
-import datetime
-
-
 from google.cloud import storage
 import pandas as pd
 import requests
@@ -13,8 +8,9 @@ import datetime
 
 # https://cloud.google.com/storage/docs/downloading-objects#storage-download-object-python
 
-from google.oauth2 import service_account
-credentials = service_account.Credentials.from_service_account_file("/Users/rjdscott/keys/rs-algotrader-4d17e78e097c.json")
+from google.oauth2 import service_account as sa
+
+credentials = sa.Credentials.from_service_account_file("/Users/rjdscott/keys/rs-algotrader-4d17e78e097c.json")
 scoped_credentials = credentials.with_scopes(["https://www.googleapis.com/auth/cloud-platform"])
 
 BUCKET_NAME = 'algotrader-etl'
